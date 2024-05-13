@@ -1,0 +1,32 @@
+{
+  "name": "@apiverve/qrcodegenerator",
+  "version": "1.0.0",
+  "description": "QR Code Generator is a simple tool for generating QR codes. It returns a PNG image of the QR code.",
+  "main": "index.js",
+  "scripts": {
+    "test": "mocha"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/apiverve/qrcodegenerator-API.git"
+  },
+  "keywords": [
+    "qr code generator"," qr code generator api"," qr code generator tool"," qr code generator software"," qr code generator service"," qr code generator library"," qr code generator sdk"," qr code generator code"," qr code generator script"," qr code generator program"," qr code generator application"," qr code generator app"," qr code generator utility"," qr code generator helper"," qr code generator helper tool"," qr code generator helper software"," qr code generator helper service"," qr code generator helper library"," qr code generator helper sdk"," qr code generator helper code"," qr code generator helper script"," qr code generator helper program"," qr code generator helper application"," qr code generator helper app"," qr code generator helper tool"," qr code generator helper utility"," qr code generator helper"
+  ],
+  "author": "APIVerve <hello@apiverve.com> (http://apiverve.com/)",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/apiverve/qrcodegenerator-API/issues"
+  },
+  "homepage": "https://github.com/apiverve/qrcodegenerator-API",
+  "devDependencies": {
+    "mocha": "^2.3.4",
+    "chai": "^3.4.1",
+    "dotenv": "^2.0.0"
+  },
+  "dependencies": {
+    "node-fetch": "3.3.2",
+    "promise": "^7.1.1",
+    "request": "^2.69.0"
+  }
+}
