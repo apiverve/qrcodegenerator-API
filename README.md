@@ -1,5 +1,4 @@
-QR Code Generator API
-============
+# QR Code Generator API
 
 QR Code Generator is a simple tool for generating QR codes. It returns a PNG image of the QR code.
 
@@ -7,57 +6,65 @@ QR Code Generator is a simple tool for generating QR codes. It returns a PNG ima
 ![Code Climate](https://img.shields.io/badge/maintainability-B-purple)
 ![Prod Ready](https://img.shields.io/badge/production-ready-blue)
 
-This is a Javascript Wrapper for the [QR Code Generator API](https://apiverve.com/marketplace/api/qrcodegenerator)
+This is a Javascript Wrapper for the [QR Code Generator API](https://apiverve.com/marketplace/qrcodegenerator)
 
 ---
 
 ## Installation
-	npm install @apiverve/qrcodegenerator --save
+
+Using npm:
+```shell
+npm install @apiverve/qrcodegenerator
+```
+
+Using yarn:
+```shell
+yarn add @apiverve/qrcodegenerator
+```
 
 ---
 
 ## Configuration
 
-Before using the qrcodegenerator API client, you have to setup your account and obtain your API Key.  
+Before using the QR Code Generator API client, you have to setup your account and obtain your API Key.
 You can get it by signing up at [https://apiverve.com](https://apiverve.com)
 
 ---
 
-## Usage
+## Quick Start
 
-The QR Code Generator API documentation is found here: [https://docs.apiverve.com/api/qrcodegenerator](https://docs.apiverve.com/api/qrcodegenerator).  
+[Get started with the Quick Start Guide](https://docs.apiverve.com/quickstart)
+
+The QR Code Generator API documentation is found here: [https://docs.apiverve.com/ref/qrcodegenerator](https://docs.apiverve.com/ref/qrcodegenerator).
 You can find parameters, example responses, and status codes documented here.
 
 ### Setup
 
-```
-var qrcodegeneratorAPI = require('@apiverve/qrcodegenerator');
-var api = new qrcodegeneratorAPI({
-    api_key: [YOUR_API_KEY],
-    secure: true //(Optional, defaults to true)
+```javascript
+const qrcodegeneratorAPI = require('@apiverve/qrcodegenerator');
+const api = new qrcodegeneratorAPI({
+    api_key: '[YOUR_API_KEY]'
 });
 ```
 
 ---
 
+## Usage
+
+---
 
 ### Perform Request
-Using the API client, you can perform requests to the API.
 
-###### Define Query
+Using the API is simple. All you have to do is make a request. The API will return a response with the data you requested.
 
-```
+```javascript
 var query = {
-  "value": "https://myspace.com",
+  "value": "https://apiverve.com",
   "type": "url",
   "format": "png",
   "margin": "0"
 };
-```
 
-###### Simple Request (using Callback)
-
-```
 api.execute(query, function (error, data) {
     if (error) {
         return console.error(error);
@@ -67,9 +74,58 @@ api.execute(query, function (error, data) {
 });
 ```
 
-###### Example Response
+---
 
+### Using Promises
+
+You can also use promises to make requests. The API returns a promise that you can use to handle the response.
+
+```javascript
+var query = {
+  "value": "https://apiverve.com",
+  "type": "url",
+  "format": "png",
+  "margin": "0"
+};
+
+api.execute(query)
+    .then(data => {
+        console.log(data);
+    })
+    .catch(error => {
+        console.error(error);
+    });
 ```
+
+---
+
+### Using Async/Await
+
+You can also use async/await to make requests. The API returns a promise that you can use to handle the response.
+
+```javascript
+async function makeRequest() {
+    var query = {
+  "value": "https://apiverve.com",
+  "type": "url",
+  "format": "png",
+  "margin": "0"
+};
+
+    try {
+        const data = await api.execute(query);
+        console.log(data);
+    } catch (error) {
+        console.error(error);
+    }
+}
+```
+
+---
+
+## Example Response
+
+```json
 {
   "status": "ok",
   "error": null,
@@ -82,8 +138,7 @@ api.execute(query, function (error, data) {
     "margin": 0,
     "expires": 1740259974243,
     "downloadURL": "https://storage.googleapis.com/apiverve.appspot.com/qrcodegenerator/7277a6dc-6b1f-4af4-820a-755eb1c1a24d.png?GoogleAccessId=635500398038-compute%40developer.gserviceaccount.com&Expires=1740259974&Signature=kk80QPNRGLhIXm6%2BmKozIhoq2ZpehDsiT7%2FyHp4JxvSj5f6EdktMxJrZipxZiz%2BgQNKdr%2F30jaBk8DWT2Q6rPNdQjbJlh1ibu6FnghwMTwtJwU7Y0o2xBXm1b6p9TdqcpMK3ueJviYJ7mnsxdIud6aIQb1t%2FnaUQM%2Fu4dIB8%2By5xXIzldiKKu7zXttyQYb5qHIb89gadMfjd8SVVJVNXm97eroa82C9QL%2Bspuz9grMvyq7x7PfpXW3pZo89x9QKYQu1hT%2Bv1exID7CKv7keZcQ5v7IdSCPGKZyweGsVRQHJ4gwWHJcA2%2FGXrMUKVzXjkUsYBhEArblnh3FVI2%2FP3FQ%3D%3D"
-  },
-  "code": 200
+  }
 }
 ```
 
@@ -96,6 +151,7 @@ Need any assistance? [Get in touch with Customer Support](https://apiverve.com/c
 ---
 
 ## Updates
+
 Stay up to date by following [@apiverveHQ](https://twitter.com/apiverveHQ) on Twitter.
 
 ---
